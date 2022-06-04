@@ -1,0 +1,79 @@
+@media screen and (max-width: 600px) {
+}
+
+
+.typingDiv {
+  padding: 15rem 0;
+}
+
+
+.typingMobile {
+  display: none;
+}
+
+.typing.animate {
+  width: 21ch;
+  border-right: 0.1em solid white;
+  color: white;
+  font-family: monospace;
+  font-size: 2rem;
+  animation: type 2.5s steps(16), writer 1s infinite alternate, delete 0.5s steps(5) 2.5s, type2 1s steps(5) 3s forwards, type3 3s steps(17, end) 6s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+  .typing.animate::before {
+    content: "Hello, I'm Kesav";
+    animation: type2 1s steps(5) 3s forwards;
+  }
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 17ch;
+  }
+}
+
+@keyframes type2 {
+  from {
+    width: 11ch;
+    content: "Hello, I'm Keshav. "
+  }
+
+  to {
+    width: 19ch;
+    content: "Hello, I'm Keshav. "
+  }
+}
+
+/*    @keyframes type3 {
+    from {
+        width: 19ch;
+        content: "Hello, I'm Keshav. Welcome KloudReach!"
+    }
+
+    to {
+        width: 42ch;
+        content: "Hello, I'm Keshav. Welcome to KloudReach!"
+    }
+}*/
+
+@keyframes writer {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes delete {
+  from {
+    width: 17ch;
+  }
+
+  to {
+    width: 11ch;
+  }
+}
