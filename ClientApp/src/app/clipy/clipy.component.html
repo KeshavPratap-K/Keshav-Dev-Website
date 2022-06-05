@@ -1,0 +1,69 @@
+<div class="container">
+<div id="container">
+  <button class="collapsible" data-aos="fade-left"><h2 class="text-center text-light">Clipy</h2></button>
+  <div class="content text-light">
+    Is it easter already....<br />Anyway here you go  <img style="width:2rem;" src="~/asset/EasterEgg.png" alt="EasterEgg">
+  </div>
+  <div class="container-fluid">
+    <!--<div class="clipyLabel" (click)="toggle()">
+      <label class="text-center">History.. </label>
+    </div>-->
+    <div class="row" data-aos="fade-left">
+      <div class="col-md-12 text-center">
+
+
+        <div class="form-group d-flex justify-content-center" style="margin-top: 2%;">
+
+          <textarea class="form-control" rows="5" id="text" style="width: 40rem;resize: none;"></textarea>
+
+        </div>
+        <div class="container" style="padding: 30px;display: flex;justify-content: center; flex-wrap: wrap;">
+          <button class="copyPrimaryBtn copybtn" id="copybtn" onclick="copyToClipboard()">Copy</button>
+          <button class="copyPrimaryBtn clearbtn" id="clrbtn" onclick="ClearText()">Clear</button>
+          <button class="copyPrimaryBtn syncbtn" id="Syncbtn" onclick="SyncbtnSubmit()">Sync</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="clipyLabel" (click)="toggle()">
+      <label class="text-center">History.. </label>
+    </div>
+    <div class="wrap" [ngClass]="{ show: isHistoryExpanded }">
+
+      <div class="cardClipy" id="HistoryBlock-@i">
+
+        <button class="btn copyHistoryBtn">Copy</button>
+        <h6 class="headerHistoryData" id="ClipyHistory-@i">PlaceHolder 1</h6>
+      </div>
+      <div class="cardClipy" id="HistoryBlock-@i">
+
+        <button class="btn copyHistoryBtn">Copy</button>
+        <h6 class="headerHistoryData" id="ClipyHistory-@i">PlaceHolder 2</h6>
+      </div>
+      <div class="cardClipy" id="HistoryBlock-@i">
+
+        <button class="btn copyHistoryBtn">Copy</button>
+        <h6 class="headerHistoryData" id="ClipyHistory-@i">PlaceHolder 3</h6>
+      </div>
+      <div class="cardClipy" id="HistoryBlock-@i">
+
+        <button class="btn copyHistoryBtn">Copy</button>
+        <h6 class="headerHistoryData" id="ClipyHistory-@i">PlaceHolder 4</h6>
+      </div>
+      <div class="cardClipy" id="HistoryBlock-@i">
+
+        <button class="btn copyHistoryBtn">Copy</button>
+        <h6 class="headerHistoryData" id="ClipyHistory-@i">PlaceHolder 5</h6>
+      </div>
+      <div class="cardClipy" id="HistoryBlock-@i">
+
+        <button class="btn copyHistoryBtn">Copy</button>
+        <h6 class="headerHistoryData" id="ClipyHistory-@i">PlaceHolder 6</h6>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>

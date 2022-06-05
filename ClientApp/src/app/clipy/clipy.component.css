@@ -1,0 +1,157 @@
+
+
+.copybtn {
+  background: #00f4056b;
+}
+
+.clearbtn{
+    background: #ff3333a6;
+}
+
+.syncbtn {
+  background: #00afff70;
+}
+
+
+.copyPrimaryBtn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 60px;
+  border-radius: .5rem;
+  border: 2px white solid;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  margin: 5px 10px;
+  /*max-width: 180px;*/
+  transition: 0.3s;
+  width: 200px;
+  /*box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;*/
+}
+
+  .copyPrimaryBtn:hover:enabled {
+    background-color: bisque;
+    border-color: bisque;
+    border: 2px solid;
+    color: #000;
+    /*box-shadow: rgb(255, 255, 255, 0) 0px 0px 0px 1px, rgba(6, 24, 44, 0) 0px 4px 6px -1px, rgba(255, 255, 255, 0) 0px 1px 0px inset;*/
+  }
+
+  .copyPrimaryBtn:disabled {
+    background-color: #282828;
+    border: 2px solid;
+    border: 2px #6f6f6f solid;
+    color: #767676;
+  }
+
+.clipyLabel {
+  color: #fff;
+  background-color: #252525;
+  text-align: center;
+  font-size: large;
+
+  padding: 5px 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: 2px solid;
+  border-radius: .5rem;
+  border-color: #ffffff0d;
+}
+
+.wrap {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.show {
+  display: flex;
+}
+
+.cardClipy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 16px;
+  width: 300px;
+  max-height: 300px;
+  padding: 32px;
+  border-radius: 15px;
+  word-wrap: break-word;
+  overflow: auto;
+  background: #ffffff14;
+  color: white;
+  font-family: monospace;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+  .cardClipy::-webkit-scrollbar {
+    display: none;
+  }
+
+.ClipyCardHidden {
+  visibility: hidden;
+  display: none;
+}
+
+.copyHistoryBtn {
+  color: #000;
+  background-color: #dcdcdc;
+  margin-bottom: 15px;
+  border-radius: 1.5rem;
+}
+
+  .copyHistoryBtn:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
+  }
+
+.btnLoginClipy {
+  /*//padding: 1rem 8rem;*/
+  margin-top: 1rem;
+}
+
+
+.collapsible {
+  background-color: #0000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff3;
+  text-align: center;
+  border-radius: 5px;
+}
+
+
+@media (max-width : 992px) {
+  .copyPrimaryBtn {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    padding: 2px 25px;
+    border-radius: 0.5rem;
+    border: 2px white solid;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    margin: 5px 5px;
+    transition: 0.3s;
+    width: fit-content;
+  }
+}

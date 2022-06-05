@@ -1,6 +1,5 @@
 #about {
   margin-top: 2rem;
-  font-size: .9rem;
 }
   #about h2 {
     color: #ffffff;
@@ -17,7 +16,6 @@
 
 .about, .about-info, .about-tools, .about-last {
   padding: 4% 10% 1% 10%;
-  font-size: 1.25em;
 }
 
 .about-tools {
@@ -25,10 +23,15 @@
   font-weight: 700;
 }
 
+.text-skill{
+    text-align:left;
+}
+
 @media screen and (min-width: 992px) {
   .about-tools {
     padding-top: 6em;
   }
+  
 }
 
 .about-tools ul:first-child {
@@ -52,5 +55,13 @@
 @media screen and (min-width: 992px) {
   .about-last {
     padding-top: 0;
+  }
+
+}
+
+@media (max-width : 992px) {
+
+  .text-skill {
+    text-align: center;
   }
 }

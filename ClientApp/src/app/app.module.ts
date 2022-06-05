@@ -13,6 +13,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ResumeComponent } from './resume/resume.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ClipyComponent } from './clipy/clipy.component';
 
 @NgModule({
   declarations: [
@@ -20,21 +22,15 @@ import { ContactComponent } from './contact/contact.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    ProjectsComponent,
+    ClipyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'projects', component: ProjectsComponent},
-      { path: 'about', component: AboutComponent},
-      { path: 'contact', component: ContactComponent},
-      { path: 'resume', component: ResumeComponent},
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

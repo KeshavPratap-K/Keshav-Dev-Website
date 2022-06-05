@@ -3,6 +3,9 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(255 255 255);
+}
 
 html {
   font-size: 14px;
