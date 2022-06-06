@@ -1,0 +1,36 @@
+.card {
+  background: #333;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #bababa !important;
+}
+
+.avatar img {
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(10%);
+  transition: .2s ease-in;
+}
+.avatar img:hover {
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+@media (max-width : 992px) {
+  .avatar {
+    max-width: 216px;
+    max-height: 216px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .avatar img {
+      /* Safari 6.0 - 9.0 */
+      filter: grayscale(10%);
+    }
+  .card {
+      font-size:1rem;
+  }
+
+}
