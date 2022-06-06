@@ -1,22 +1,41 @@
-<div class="wrapper">
+<div class="d-flex flex-wrap align-items-center justify-content-center">
+  <div id="projects">
+  <h2 class="text-center" data-aos="fade-left" data-aos-delay="0">Projects</h2>
+  <div class="wrapper row">
 
-  <div class="header">
-    <div class="d-flex flex-wrap align-items-center justify-content-center">
-      <div class="card" style="width: 18rem; cursor: pointer; background-color: #fff3 !important;" data-aos="fade-left" data-aos-delay="0" [routerLink]="['/clipy']">
-        <div class="card-body">
-          <h5 class="card-title">Clipy</h5>
-          <p class="card-text">Simple clipboard to store copied data across all platform</p>
-          <button class="learn-more button">
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Take me there..</span>
-          </button>
+    <div class="header col">
+      <div class="d-flex flex-wrap align-items-center justify-content-center height-100">
+        <div class="card height-100" data-aos="fade-left" data-aos-delay="0" [routerLink]="['/clipy']">
+          <div class="card-body">
+            <h5 class="card-title">Clipy</h5>
+            <p class="card-text">Simple clipboard to store and access copied data across all platform</p>
+            <button class="learn-more button">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">Take me there..</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header col">
+      <div class="d-flex flex-wrap align-items-center justify-content-center height-100">
+        <div class="card height-100" data-aos="fade-left" data-aos-delay="0" (click)="onNavigate()">
+          <div class="card-body">
+            <h5 class="card-title">Battery+</h5>
+            <p class="card-text">Flutter cross platform aplication to get battery details along with device details</p>
+            <button class="learn-more button">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">Take me there..</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
+  </div>
 </div>
-

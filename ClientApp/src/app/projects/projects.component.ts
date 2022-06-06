@@ -11,5 +11,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onNavigate() {
+    window.open("https://github.com/KeshavPratap-K/batteryplus", "_blank");
+  }
 }

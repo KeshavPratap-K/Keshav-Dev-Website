@@ -18,6 +18,11 @@
   padding: 4% 10% 1% 10%;
 }
 
+.row{
+    margin: 0px;
+    padding:0px;
+
+}
 .about-tools {
   padding-top: 4.375em;
   font-weight: 700;
@@ -63,5 +68,8 @@
 
   .text-skill {
     text-align: center;
+  }
+  .about, .about-info, .about-tools, .about-last {
+    padding: 0;
   }
 }

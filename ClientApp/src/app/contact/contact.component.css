@@ -1,4 +1,13 @@
 #contact {
   margin-top: 2rem;
-  font-size: .9rem;
+  width: fit-content;
 }
+
+.row {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+
