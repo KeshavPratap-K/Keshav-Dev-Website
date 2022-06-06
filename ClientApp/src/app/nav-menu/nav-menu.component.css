@@ -84,6 +84,22 @@ a {
 
 .highlight {
   position: relative;
-  color: white;
   border-radius: 0.25rem;
+  text-align:center;
+}
+
+.link-active {
+  color: black !important;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+
+@media (max-width : 992px) {
+    .grid-Center{
+        display: grid;
+        place-content:center;
+    }
+
+
+
 }

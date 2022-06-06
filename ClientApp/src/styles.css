@@ -41,6 +41,8 @@ body {
   background-color: #1e1e1e;
   color: white;
   overflow-x: hidden;
+  font-family:'Poppins', sans-serif;
+
 }
 
 app-root {
