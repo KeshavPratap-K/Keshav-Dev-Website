@@ -138,6 +138,12 @@
   border-radius: 5px;
 }
 
+.buttonGrp {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
 
 @media (max-width : 992px) {
   .copyPrimaryBtn {
@@ -153,5 +159,8 @@
     margin: 5px 5px;
     transition: 0.3s;
     width: fit-content;
+  }
+  .buttonGrp{
+      padding: 10px;
   }
 }

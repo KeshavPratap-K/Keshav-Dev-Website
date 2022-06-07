@@ -1,44 +1,46 @@
 <header>
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark text-light box-shadow py-3 px-5 mb-3 grid-Center">
     <a class="navbar-brand" data-aos="fade-left" data-aos-delay="0" asp-area="" [routerLink]="['/']">#Keshav Pratap Singh<div class="prefix">(Dev)</div></a>
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-              aria-label="Toggle navigation"
-              [attr.aria-expanded]="isExpanded"
-              (click)="toggle()">
-        <span class="text"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" stroke='#fff' stroke-width="1px" fill="#fff"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg></span>
-      </button>
-      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end margintop"
-           [ngClass]="{ show: isExpanded }">
-        <ul class="navbar-nav flex-grow">
-          <!--<li class="nav-item"
-      [routerLinkActive]="['link-active']"
-      [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
-        </li>-->
-          <li class="nav-item" >
-            <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="200" [routerLinkActive]="['link-active']" [routerLink]="['/projects']">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="300" [routerLinkActive]="['link-active']" [routerLink]="['/about']">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="300" [routerLinkActive]="['link-active']" [routerLink]="['/contact']">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="500" [routerLinkActive]="['link-active']" [routerLink]="['/resume']">Resume</a>
-          </li>
-        </ul>
-        <!--<app-login-menu></app-login-menu>-->
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+            aria-label="Toggle navigation"
+            [attr.aria-expanded]="isExpanded"
+            (click)="toggle()">
+      <div [@rotatedState]='state'>
+        <span class="text" ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" stroke='#fff' stroke-width="1px" fill="#fff"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg></span>
       </div>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end margintop"
+         [ngClass]="{ show: isExpanded }">
+      <ul class="navbar-nav flex-grow">
+        <!--<li class="nav-item"
+        [routerLinkActive]="['link-active']"
+        [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+          </li>-->
+        <li class="nav-item">
+          <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="200" [routerLinkActive]="['link-active']" [routerLink]="['/projects']">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="300" [routerLinkActive]="['link-active']" [routerLink]="['/about']">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="300" [routerLinkActive]="['link-active']" [routerLink]="['/contact']">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link highlight" data-aos="fade-left" data-aos-delay="500" [routerLinkActive]="['link-active']" [routerLink]="['/resume']">Resume</a>
+        </li>
+      </ul>
+      <!--<app-login-menu></app-login-menu>-->
+    </div>
   </nav>
 
 </header>

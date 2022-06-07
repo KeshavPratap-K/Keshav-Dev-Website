@@ -56,8 +56,8 @@ a {
 }*/
 
 .highlight:hover {
-  color: black !important;
-  background-color: white;
+  color: white !important;
+  background-color: #265a88;
   border-radius: 0.25rem;
 }
 
@@ -89,7 +89,7 @@ a {
 }
 
 .link-active {
-  color: black !important;
+  color: #103250 !important;
   background-color: white;
   border-radius: 0.25rem;
 }
@@ -105,6 +105,9 @@ a {
     border-color: rgba(255,255,255,.1);
     margin-top: .5rem;
   }
+  /*.navbar-toggler:focus {
+    border-color: rgba(255,255,255,0);
+  }*/
     /*.navbar-toggler:active {
       transform: rotate(180deg);
     }*/
