@@ -55,6 +55,13 @@ a {
   transform-origin: bottom right;
 }*/
 
+.highlight {
+  position: relative;
+  border-radius: 0.25rem;
+  text-align: center;
+  transition: 1s;
+}
+
 .highlight:hover {
   color: white !important;
   background-color: #265a88;
@@ -82,11 +89,6 @@ a {
   /*box-shadow: rgb(255, 255, 255) 0px 0px 0px 0.5px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;*/
 /*}*/
 
-.highlight {
-  position: relative;
-  border-radius: 0.25rem;
-  text-align:center;
-}
 
 .link-active {
   color: #103250 !important;

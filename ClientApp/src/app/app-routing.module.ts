@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'resume', component: ResumeComponent }, 
-  { path: 'clipy', component: ClipyComponent }
+  { path: 'projects/clipy', component: ClipyComponent }
 ];
 
 @NgModule({

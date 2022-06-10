@@ -30,6 +30,7 @@
     <div class="div-2" *ngIf="showDiv2" (click)="showDiv2 = false"><p>content 2</p></div>-->
 
     <div class="clipyLabel" (click)="toggle()">
+      <hr class="d-print-none">
       <label class="text-center">History.. </label>
     </div>
     <div class="wrap" [ngClass]="{ show: isHistoryExpanded }">
