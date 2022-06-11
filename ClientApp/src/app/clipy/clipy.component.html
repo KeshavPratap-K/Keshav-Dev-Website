@@ -27,22 +27,30 @@
     </div>
 
     <!--<div class="div-1" ><p>content 1</p></div>
-    <div class="div-2" *ngIf="showDiv2" (click)="showDiv2 = false"><p>content 2</p></div>-->
+  <div class="div-2" *ngIf="showDiv2" (click)="showDiv2 = false"><p>content 2</p></div>-->
 
     <div class="clipyLabel" (click)="toggle()">
-      <hr class="d-print-none">
+      <hr>
       <label class="text-center">History.. </label>
+      <hr>
     </div>
     <div class="wrap" [ngClass]="{ show: isHistoryExpanded }">
 
+      
       <div class="cardClipy" *ngFor="let clipyHistory of clipyHistoryArray.reverse(); index as i">
-
         <!--<button class="btn copyHistoryBtn">Copy</button>-->
         <p class="headerHistoryData">{{clipyHistory}}</p>
       </div>
 
 
+      <div class="d-flex justify-content-center" *ngIf="isLoading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
     </div>
+    
 
   </div>
 </div>

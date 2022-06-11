@@ -1,6 +1,17 @@
+using Keshav_Dev.Model;
+using KloudReach.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<ClipyClipboardDatabaseSettings>(
+    builder.Configuration.GetSection("ClipyDatabase"));
+builder.Services.AddSingleton<ClipyClipboardService>();
+//builder.Services.AddSingleton<ClipyClipboardCRUD>();
+builder.Services.AddSingleton<ClipyClipboardFields>();
+
 
 builder.Services.AddControllersWithViews();
 

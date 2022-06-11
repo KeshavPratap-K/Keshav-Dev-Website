@@ -49,10 +49,9 @@
   color: #fff;
   text-align: center;
   font-size: large;
-
+  cursor: pointer;
   padding: 5px 0;
   margin-top: 10px;
-  margin-bottom: 30px;
   border-radius: .5rem;
   border-color: #ffffff0d;
 }

@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Keshav_Dev.Model;
+using KloudReach.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Keshav_Dev.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        private readonly ClipyClipboardService _clipyClipboardService;
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -13,21 +14,21 @@ namespace Keshav_Dev.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ClipyClipboardService clipyClipboardService)
         {
             _logger = logger;
+            _clipyClipboardService = clipyClipboardService;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+        //[HttpGet]
+        //public async Task<IEnumerable<clipyClipboardData>> GetAsync()
+        //{
+        //    var clipyClipboardFields = await _clipyClipboardService.GetAsync("5e44746f-e6b6-4914-82b5-c374e03cf5ba");
+        //    return Enumerable.Range(1, 1).Select(index => new clipyClipboardData
+        //    {
+        //        clipboardData = clipyClipboardFields.ClipyHistory,
+        //    })
+        //    .ToArray();
+        //}
     }
 }

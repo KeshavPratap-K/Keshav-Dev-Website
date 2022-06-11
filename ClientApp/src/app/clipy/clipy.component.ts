@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
+import { ClipyService } from '../clipy.service';
+import { ClipyClipboardFields } from '../clipy';
 
 @Component({
   selector: 'app-clipy',
@@ -6,23 +9,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clipy.component.css']
 })
 export class ClipyComponent implements OnInit {
-  isHistoryExpanded = false;
+  isHistoryExpanded: boolean = true;
   clipyText: string | undefined;
   public showDiv2: boolean = true;
-  
+  public isLoading: boolean = true;
+  public clipyHistoryGet: ClipyClipboardFields[] = [];
+
   btnGrp = {
     copyBtnText: "Copy",
     clearBtnText: "Clear",
     syncBtnText: "Sync",
   }
+  baseUrlValue = "";
 
   clipyHistoryArray: string[] = [];
 
-  constructor() { }
+  
 
   ngOnInit(): void {
     this.isHistoryExpanded = false;
   }
+
+  constructor(private clipyService: ClipyService, private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    http.get<ClipyClipboardFields[]>(baseUrl + 'clipy').subscribe(result => {
+      clipyService.clipyHistoryGet = result;
+      this.clipyHistoryArray = clipyService.clipyHistoryGet[0].clipboardData;
+      this.isLoading = false;
+    }, error => console.error(error));
+    
+  }
+
+
 
   toggle() {
     this.isHistoryExpanded = !this.isHistoryExpanded;
@@ -50,6 +67,8 @@ export class ClipyComponent implements OnInit {
         break;
       }
       case 'Sync': {
+        this.clipyService.clipyHistoryGet[0].clipboardData = this.clipyHistoryArray;
+        this.updateClipy();
         this.changeTextBtn(this.btnGrp.syncBtnText);
         this.btnGrp.syncBtnText = "Synced";
         break;
@@ -72,28 +91,17 @@ export class ClipyComponent implements OnInit {
     }, 1500);
   }
 
+  updateClipy() {
+    this.http.post<ClipyClipboardFields[]>(this.baseUrl + 'clipy', this.clipyService.clipyHistoryGet).subscribe({
+      next: data => {
+        console.log('Sync response', data);
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    });
+  }
+
 }
 
-class Queue<T>{
-  _queue: T[];
 
-  constructor(queue?: T[]) {
-    this._queue = queue || [];
-  }
-
-  enqueue(item: T) {
-    this._queue.push(item);
-  }
-
-  dequeue(): T | undefined {
-    return this._queue.shift();
-  }
-
-  clear() {
-    this._queue = [];
-  }
-
-  get count(): number {
-    return this._queue.length;
-  }
-}
