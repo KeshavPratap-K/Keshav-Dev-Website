@@ -7,6 +7,7 @@ const PROXY_CONFIG = [
   {
     context: [
       "/clipy",
+      "/user",
    ],
     target: target,
     secure: false,

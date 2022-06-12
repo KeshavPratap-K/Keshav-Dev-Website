@@ -1,16 +1,27 @@
 using Keshav_Dev.Model;
-using KloudReach.Services;
+using Keshav_Dev.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.Configure<ClipyClipboardDatabaseSettings>(
     builder.Configuration.GetSection("ClipyDatabase"));
+builder.Services.Configure<ClipyUserDatabaseSettings>(
+    builder.Configuration.GetSection("ClipyUserDatabase"));
 builder.Services.AddSingleton<ClipyClipboardService>();
 //builder.Services.AddSingleton<ClipyClipboardCRUD>();
 builder.Services.AddSingleton<ClipyClipboardFields>();
+builder.Services.AddSingleton<ClipyUserService>();
+//builder.Services.AddSingleton<ClipyClipboardCRUD>();
+builder.Services.AddSingleton<ClipyUserFields>();
+builder.Services.AddSingleton<ClipyClipboardDataId>();
 
 
 builder.Services.AddControllersWithViews();
@@ -27,6 +38,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
 
 app.MapControllerRoute(

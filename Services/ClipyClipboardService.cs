@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace KloudReach.Services
+namespace Keshav_Dev.Services
 {
     public class ClipyClipboardService
     {

@@ -1,7 +1,7 @@
 ﻿using Keshav_Dev.Model;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KloudReach.Services;
+namespace Keshav_Dev.Services;
 
 public class ClipyClipboardCRUD: ControllerBase
 {

@@ -68,9 +68,8 @@ export class ClipyComponent implements OnInit {
       }
       case 'Sync': {
         this.clipyService.clipyHistoryGet[0].clipboardData = this.clipyHistoryArray;
-        this.updateClipy();
-        this.changeTextBtn(this.btnGrp.syncBtnText);
-        this.btnGrp.syncBtnText = "Synced";
+        this.btnGrp.syncBtnText = "Syncing"
+        let result = this.updateClipy();
         break;
       }
       default: {
@@ -95,9 +94,13 @@ export class ClipyComponent implements OnInit {
     this.http.post<ClipyClipboardFields[]>(this.baseUrl + 'clipy', this.clipyService.clipyHistoryGet).subscribe({
       next: data => {
         console.log('Sync response', data);
+        this.changeTextBtn("Sync");
+        this.btnGrp.syncBtnText = "Synced";
       },
       error: error => {
         console.error('There was an error!', error);
+        this.changeTextBtn("Sync");
+        this.btnGrp.syncBtnText = "failed";
       }
     });
   }

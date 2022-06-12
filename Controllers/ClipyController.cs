@@ -1,10 +1,11 @@
 ﻿using Keshav_Dev.Model;
-using KloudReach.Services;
+using Keshav_Dev.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-//using KloudReach.Views.Home;
+//using Keshav_Dev.Views.Home;
 
-namespace KloudReach.Controllers;
+namespace Keshav_Dev.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -32,9 +33,10 @@ public class ClipyController : ControllerBase
     //}
 
     [HttpGet]
+    [Authorize]
     public async Task<IEnumerable<ClipyClipboardData>> GetAsync()
     {
-        var clipyClipboardFields = await _clipyClipboardService.GetAsync("5e44746f-e6b6-4914-82b5-c374e03cf5ba");
+        var clipyClipboardFields = await _clipyClipboardService.GetAsync("62a5e26605362bc67b0a52a8");
         return Enumerable.Range(1, 1).Select(index => new ClipyClipboardData
         {
             clipboardData = clipyClipboardFields.ClipyHistory,
@@ -48,12 +50,14 @@ public class ClipyController : ControllerBase
         if (clipyClipboard != null)
         {
             ClipyClipboardFields updatedClipyClipboardFields = new ClipyClipboardFields();
-            updatedClipyClipboardFields.IdShared = "5e44746f-e6b6-4914-82b5-c374e03cf5ba";
+            updatedClipyClipboardFields.IdShared = "62a5e26605362bc67b0a52a8";
             updatedClipyClipboardFields.ClipyHistory = clipyClipboard.First().clipboardData;
 
-            await _clipyClipboardService.UpdateAsync("5e44746f-e6b6-4914-82b5-c374e03cf5ba", updatedClipyClipboardFields);
+            await _clipyClipboardService.UpdateAsync("62a5e26605362bc67b0a52a8", updatedClipyClipboardFields);
+            return this.Ok($"True");
         }
-        return this.Ok($"True");
+        return this.BadRequest($"Failed");
+        
     }
 
     //[HttpGet]
