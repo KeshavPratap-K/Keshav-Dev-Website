@@ -20,7 +20,6 @@ export class ClipyComponent implements OnInit {
     clearBtnText: "Clear",
     syncBtnText: "Sync",
   }
-  baseUrlValue = "";
 
   clipyHistoryArray: string[] = [];
 

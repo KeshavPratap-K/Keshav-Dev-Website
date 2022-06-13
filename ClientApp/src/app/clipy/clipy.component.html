@@ -14,11 +14,11 @@
 
         <div class="form-group d-flex justify-content-center" style="margin-top: 2%;">
 
-          <textarea class="form-control" rows="5" id="text" style="width: 40rem;resize: none;"></textarea>
+          <textarea [(ngModel)]="clipyText" #clipyInputTarget onfocus="this.setSelectionRange(0, this.value.length)" class="form-control" rows="5" id="text" style="width: 40rem;resize: none;"></textarea>
 
         </div>
         <div class="container buttonGrp">
-          <button class="copyPrimaryBtn copybtn" id="copybtn" (click)="ChangeText('Copy')">{{btnGrp.copyBtnText}}</button>
+          <button class="copyPrimaryBtn copybtn" id="copybtn" [ngxClipboard]="clipyInputTarget" (click)="ChangeText('Copy')">{{btnGrp.copyBtnText}}</button>
           <button class="copyPrimaryBtn clearbtn" id="clrbtn" (click)="ChangeText('Clear')">{{btnGrp.clearBtnText}}</button>
           <button class="copyPrimaryBtn syncbtn" id="Syncbtn" (click)="ChangeText('Sync')">{{btnGrp.syncBtnText}}</button>
         </div>
