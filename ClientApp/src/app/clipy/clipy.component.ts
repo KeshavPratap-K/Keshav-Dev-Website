@@ -10,7 +10,7 @@ import { ClipyClipboardFields } from '../clipy';
 })
 export class ClipyComponent implements OnInit {
   isHistoryExpanded: boolean = true;
-  clipyText: string | undefined;
+  clipyText: string = "";
   public showDiv2: boolean = true;
   public isLoading: boolean = true;
   public clipyHistoryGet: ClipyClipboardFields[] = [];
