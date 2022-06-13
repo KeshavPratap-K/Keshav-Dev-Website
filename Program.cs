@@ -16,10 +16,8 @@ builder.Services.Configure<ClipyClipboardDatabaseSettings>(
 builder.Services.Configure<ClipyUserDatabaseSettings>(
     builder.Configuration.GetSection("ClipyUserDatabase"));
 builder.Services.AddSingleton<ClipyClipboardService>();
-//builder.Services.AddSingleton<ClipyClipboardCRUD>();
 builder.Services.AddSingleton<ClipyClipboardFields>();
 builder.Services.AddSingleton<ClipyUserService>();
-//builder.Services.AddSingleton<ClipyClipboardCRUD>();
 builder.Services.AddSingleton<ClipyUserFields>();
 builder.Services.AddSingleton<ClipyClipboardDataId>();
 
@@ -34,6 +32,11 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseCors(builder => builder.WithOrigins("http://localhost:51281", "https://localhost:44437/", "http://example.com")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials());
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

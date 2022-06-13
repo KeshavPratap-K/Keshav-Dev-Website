@@ -33,7 +33,6 @@ public class ClipyController : ControllerBase
     //}
 
     [HttpGet]
-    [Authorize]
     public async Task<IEnumerable<ClipyClipboardData>> GetAsync()
     {
         var clipyClipboardFields = await _clipyClipboardService.GetAsync("62a5e26605362bc67b0a52a8");
