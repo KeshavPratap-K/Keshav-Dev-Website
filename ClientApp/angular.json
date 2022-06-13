@@ -69,7 +69,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Keshav_Dev:build:production"
+              "browserTarget": "Keshav_Dev:build:development"
             },
             "development": {
               "browserTarget": "Keshav_Dev:build:development",
