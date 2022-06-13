@@ -37,7 +37,7 @@
     <div class="wrap" [ngClass]="{ show: isHistoryExpanded }">
 
       
-      <div class="cardClipy" *ngFor="let clipyHistory of clipyHistoryArray.reverse(); index as i">
+      <div class="cardClipy" *ngFor="let clipyHistory of clipyHistoryArray">
         <!--<button class="btn copyHistoryBtn">Copy</button>-->
         <p class="headerHistoryData">{{clipyHistory}}</p>
       </div>
