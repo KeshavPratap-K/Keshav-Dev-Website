@@ -53,12 +53,9 @@ export class ClipyComponent implements OnInit {
         this.btnGrp.copyBtnText = "Copied";
         this.isHistoryExpanded = true;
         if (this.clipyText != null && this.clipyText != "") {
-          this.clipyHistoryArray.reverse();
           if (this.clipyHistoryArray.length == 6)
             this.clipyHistoryArray.shift();
           this.clipyHistoryArray.push(this.clipyText);
-          this.clipyHistoryArray.reverse();
-
         }
 
         break;
@@ -70,8 +67,7 @@ export class ClipyComponent implements OnInit {
         break;
       }
       case 'Sync': {
-        this.clipyService.clipyHistoryGet[0].clipboardData = this.clipyHistoryArray.reverse();
-        this.clipyHistoryArray.reverse();
+        this.clipyService.clipyHistoryGet[0].clipboardData = this.clipyHistoryArray;
         this.btnGrp.syncBtnText = "Syncing"
         let result = this.updateClipy();
         break;
