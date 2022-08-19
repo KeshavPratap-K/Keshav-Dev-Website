@@ -1,57 +1,57 @@
 <div class="container">
-<div id="container" data-aos="fade-left">
-  <button class="collapsible"><h2 class="text-center text-light">Clipy</h2></button>
-  <!--<div class="content text-light">
-    Is it easter already....<br />Anyway here you go  <img style="width:2rem;" src="~/asset/EasterEgg.png" alt="EasterEgg">
-  </div>-->
-  <div class="container-fluid">
-    <!--<div class="clipyLabel" (click)="toggle()">
-    <label class="text-center">History.. </label>
-  </div>-->
-    <div class="row" data-aos="fade-left">
-      <div class="col-md-12 text-center">
+  <div id="container" data-aos="fade-left">
+    <button class="collapsible"><h2 class="text-center text-light">Clipy (under construction)</h2></button>
+    <!--<div class="content text-light">
+      Is it easter already....<br />Anyway here you go  <img style="width:2rem;" src="~/asset/EasterEgg.png" alt="EasterEgg">
+    </div>-->
+    <div class="container-fluid">
+      <!--<div class="clipyLabel" (click)="toggle()">
+        <label class="text-center">History.. </label>
+      </div>-->
+      <div class="row" data-aos="fade-left">
+        <div class="col-md-12 text-center">
 
 
-        <div class="form-group d-flex justify-content-center" style="margin-top: 2%;">
+          <div class="form-group d-flex justify-content-center" style="margin-top: 2%;">
 
-          <textarea [(ngModel)]="clipyText" #clipyInputTarget onfocus="this.setSelectionRange(0, this.value.length)" class="form-control" rows="5" id="text" style="width: 40rem;resize: none;"></textarea>
+            <textarea [(ngModel)]="clipyText" #clipyInputTarget onfocus="this.setSelectionRange(0, this.value.length)" class="form-control" rows="5" id="text" style="width: 40rem;resize: none;"></textarea>
 
-        </div>
-        <div class="container buttonGrp">
-          <button class="copyPrimaryBtn copybtn" id="copybtn" [ngxClipboard]="clipyInputTarget" (click)="ChangeText('Copy')">{{btnGrp.copyBtnText}}</button>
-          <button class="copyPrimaryBtn clearbtn" id="clrbtn" (click)="ChangeText('Clear')">{{btnGrp.clearBtnText}}</button>
-          <button class="copyPrimaryBtn syncbtn" id="Syncbtn" (click)="ChangeText('Sync')">{{btnGrp.syncBtnText}}</button>
-        </div>
+          </div>
+          <div class="container buttonGrp">
+            <button class="copyPrimaryBtn copybtn" id="copybtn" [ngxClipboard]="clipyInputTarget" (click)="ChangeText('Copy')">{{btnGrp.copyBtnText}}</button>
+            <button class="copyPrimaryBtn clearbtn" id="clrbtn" (click)="ChangeText('Clear')">{{btnGrp.clearBtnText}}</button>
+            <button class="copyPrimaryBtn syncbtn" id="Syncbtn" (click)="ChangeText('Sync')">{{btnGrp.syncBtnText}}</button>
+          </div>
 
-      </div>
-    </div>
-
-    <!--<div class="div-1" ><p>content 1</p></div>
-  <div class="div-2" *ngIf="showDiv2" (click)="showDiv2 = false"><p>content 2</p></div>-->
-
-    <div class="clipyLabel" (click)="toggle()">
-      <hr>
-      <label class="text-center">History.. </label>
-      <hr>
-    </div>
-    <div class="wrap" [ngClass]="{ show: isHistoryExpanded }">
-
-      
-      <div class="cardClipy" *ngFor="let clipyHistory of clipyHistoryArray.slice().reverse()">
-        <!--<button class="btn copyHistoryBtn">Copy</button>-->
-        <p class="headerHistoryData">{{clipyHistory}}</p>
-      </div>
-
-
-      <div class="d-flex justify-content-center" *ngIf="isLoading">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
         </div>
       </div>
 
-    </div>
-    
+      <!--<div class="div-1" ><p>content 1</p></div>
+      <div class="div-2" *ngIf="showDiv2" (click)="showDiv2 = false"><p>content 2</p></div>-->
 
+      <div class="clipyLabel" (click)="toggle()">
+        <hr>
+        <label class="text-center">History.. </label>
+        <hr>
+      </div>
+      <div class="wrap" [ngClass]="{ show: isHistoryExpanded }">
+
+
+        <div class="cardClipy" *ngFor="let clipyHistory of clipyHistoryArray.slice().reverse()">
+          <!--<button class="btn copyHistoryBtn">Copy</button>-->
+          <p class="headerHistoryData">{{clipyHistory}}</p>
+        </div>
+
+
+        <div class="d-flex justify-content-center" *ngIf="isLoading">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
   </div>
-</div>
 </div>
