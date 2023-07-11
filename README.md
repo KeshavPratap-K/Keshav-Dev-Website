@@ -12,4 +12,4 @@ I value keeping my site open source, but as you all know, _**plagiarism is bad**
 
 ### TL;DR
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [keshav-dev.herokuapp.com](https://keshav-dev.herokuapp.com). Thanks!
+Yes, you can fork this repo. Please give me proper credit by linking back to [https://keshav-k.herokuapp.com/](https://keshav-k.herokuapp.com/). Thanks!
