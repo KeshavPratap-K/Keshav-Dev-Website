@@ -10,6 +10,8 @@ import { ResumeComponent } from './resume/resume.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ClipyComponent } from './clipy/clipy.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'resume', component: ResumeComponent }, 
-  { path: 'projects/clipy', component: ClipyComponent }
+  { path: 'projects/clipy', component: ClipyComponent },
+  { path: 'projects/clipy/login', component: LoginComponent },
+  { path: 'projects/clipy/register', component: RegisterComponent },
 ];
 
 @NgModule({

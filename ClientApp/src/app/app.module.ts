@@ -18,6 +18,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ClipyComponent } from './clipy/clipy.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ClipyComponent } from './clipy/clipy.component';
     CounterComponent,
     FetchDataComponent,
     ProjectsComponent,
-    ClipyComponent
+    ClipyComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

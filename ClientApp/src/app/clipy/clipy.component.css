@@ -66,6 +66,15 @@
   display: flex;
 }
 
+.hidden{
+    display: none;
+}
+
+.shown {
+  display: block;
+  margin-right: 1.5rem;
+}
+
 .cardClipy {
   display: flex;
   flex-direction: column;

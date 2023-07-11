@@ -1,0 +1,71 @@
+<section class="overflow-hidden">
+
+  <div class="container px-4 py-3 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight">
+          <span class="text-primary"> Privacy </span> <br />
+          <span>is your right</span>
+        </h1>
+        <!--<p class="mb-4">
+          We store login data in a encrypted database.<br />
+          You can also login using the temporary email to increase anonymity.
+        </p>-->
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <h1 class="my-3 display-5 fw-bold ls-tight">
+              Register <br />
+            </h1>
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+
+              <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+              <!-- UserName input -->
+              <div class="form-outline mb-4">
+
+                <label class="form-label">UserName</label>
+                <input type="text" class="form-control" />
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">Confirm Password</label>
+                <input type="text" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+              </div>
+
+              <!-- Checkbox -->
+
+              <!-- Submit button -->
+              <button type="submit" class="w-100 btn btn-lg btn-block btn-primary mb-4">
+                Sign up
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

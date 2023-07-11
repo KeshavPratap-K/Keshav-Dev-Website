@@ -2,11 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ClipyService } from '../clipy.service';
 import { ClipyClipboardFields } from '../clipy';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-clipy',
   templateUrl: './clipy.component.html',
-  styleUrls: ['./clipy.component.css']
+  styleUrls: ['./clipy.component.css'],
+  animations: [
+    // Each unique animation requires its own trigger. The first argument of the trigger function is the name
+    trigger('rotatedState', [
+      state('default', style({ transform: 'rotate(0)' })),
+      state('rotated', style({ transform: 'rotate(-180deg)' })),
+      transition('rotated => default', animate('100ms ease-out')),
+      transition('default => rotated', animate('100ms ease-in'))
+    ])
+  ],
 })
 export class ClipyComponent implements OnInit {
   isHistoryExpanded: boolean = true;
@@ -14,11 +24,13 @@ export class ClipyComponent implements OnInit {
   public showDiv2: boolean = true;
   public isLoading: boolean = true;
   public clipyHistoryGet: ClipyClipboardFields[] = [];
+  state: string = 'default';
 
   btnGrp = {
     copyBtnText: "Copy",
     clearBtnText: "Clear",
     syncBtnText: "Sync",
+    clearHistoryBtnText: "Clear History"
   }
 
   clipyHistoryArray: string[] = [];
@@ -27,6 +39,7 @@ export class ClipyComponent implements OnInit {
 
   ngOnInit(): void {
     this.isHistoryExpanded = false;
+    this.state = 'default';
   }
 
   constructor(private clipyService: ClipyService, private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
@@ -42,6 +55,7 @@ export class ClipyComponent implements OnInit {
 
   toggle() {
     this.isHistoryExpanded = !this.isHistoryExpanded;
+    this.state = (this.state === 'default' ? 'rotated' : 'default');
   }
 
   ChangeText(btnClicked: string) {
@@ -71,6 +85,16 @@ export class ClipyComponent implements OnInit {
         let result = this.updateClipy();
         break;
       }
+
+      case 'ClearHistory': {
+        this.changeTextBtn(this.btnGrp.clearHistoryBtnText);
+        this.btnGrp.clearHistoryBtnText = "Cleared History";
+        this.clipyHistoryArray = [];
+        this.ChangeText('Sync');
+        this.isHistoryExpanded = false;
+        break;
+      }
+
       default: {
 
       }
@@ -86,6 +110,8 @@ export class ClipyComponent implements OnInit {
         this.btnGrp.clearBtnText = btnOrginalValue;
       if (btnOrginalValue === "Sync")
         this.btnGrp.syncBtnText = btnOrginalValue;
+      if (btnOrginalValue === "Clear History")
+        this.btnGrp.clearHistoryBtnText = btnOrginalValue;
     }, 1500);
   }
 
